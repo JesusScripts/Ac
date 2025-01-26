@@ -1,4 +1,4 @@
-local webhookUrl = "TVŮJ_WEBHOOK_URL"
+local webhookUrl = ""
 local alreadyChecking = {}
 local hexChars = '0123456789abcdef'
 local foundCheat = false
@@ -79,9 +79,9 @@ function sendToWebhook(playerId, playerName, message)
     PerformHttpRequest(webhookUrl, function(err, text, headers) end, "POST", json.encode({
         username = "Anti-Cheat",
         embeds = {{
-            title = "Cheat Detekován",
+            title = "Cheat Deteckt",
             description = "Hráč ID: " .. playerId .. "\nJméno: " .. playerName .. "\nCheat: " .. message,
-            color = 16711680
+            color = 1111
         }}
     }), { ["Content-Type"] = "application/json" })
 end
